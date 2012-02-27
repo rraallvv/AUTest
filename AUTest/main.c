@@ -2,9 +2,6 @@
 //  main.c
 //  AUTest
 //
-//  Created by Tom Schroeder on 2/26/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
 
 #include <CoreAudio/CoreAudio.h>
 #include <AudioToolbox/AudioToolbox.h>
@@ -23,9 +20,9 @@ int main(int argc, char *argv[])
    cd.componentFlagsMask = 0;
    cd.componentType = kAudioUnitType_Output;
    cd.componentSubType = kAudioUnitSubType_DefaultOutput;
-   
-   AUGraphNewNode(audioGraph, &cd, 0, NULL, &outputNode);
-   AUGraphGetNodeInfo(audioGraph, outputNode, 0, 0, 0, &outputUnit);
+
+   AUGraphAddNode(audioGraph, &cd, &outputNode);
+   AUGraphNodeInfo(audioGraph, outputNode, &cd, &outputUnit);
    
    AUNode mixerNode;
    AudioUnit mixerUnit;
@@ -36,8 +33,8 @@ int main(int argc, char *argv[])
    cd.componentType = kAudioUnitType_Mixer;
    cd.componentSubType = kAudioUnitSubType_StereoMixer;
    
-   AUGraphNewNode(audioGraph, &cd, 0, NULL, &mixerNode);
-   AUGraphGetNodeInfo(audioGraph, mixerNode, 0, 0, 0, &mixerUnit);
+   AUGraphAddNode(audioGraph, &cd, &mixerNode);
+   AUGraphNodeInfo(audioGraph, mixerNode, &cd, &mixerUnit);
    
    AUGraphConnectNodeInput(audioGraph, mixerNode, 0, outputNode, 0);
    
@@ -54,8 +51,8 @@ int main(int argc, char *argv[])
    cd.componentType = kAudioUnitType_MusicDevice;
    cd.componentSubType = kAudioUnitSubType_DLSSynth;
    
-   AUGraphNewNode(audioGraph, &cd, 0, NULL, &synthNode);
-   AUGraphGetNodeInfo(audioGraph, synthNode, 0, 0, 0, &synthUnit);
+   AUGraphAddNode(audioGraph, &cd, &synthNode);
+   AUGraphNodeInfo(audioGraph, synthNode, &cd, &synthUnit);
    
    AUGraphConnectNodeInput(audioGraph, synthNode, 0, mixerNode, 0);
    
