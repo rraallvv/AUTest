@@ -1,28 +1,39 @@
 
-build/AUTest.build/Debug/AUTest.build/AUTest-all-target-headers.hmap
+# Project Specific #
+####################
+build/
 
-build/AUTest.build/Debug/AUTest.build/AUTest-generated-files.hmap
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
 
-build/AUTest.build/Debug/AUTest.build/AUTest-own-target-headers.hmap
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
 
-build/AUTest.build/Debug/AUTest.build/AUTest.hmap
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
 
-build/AUTest.build/Debug/AUTest.build/AUTest-project-headers.hmap
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
 
-build/AUTest.build/Debug/AUTest.build/Objects-normal/x86_64/AUTest.LinkFileList
 
-build/Debug/AUTest
-
-build/AUTest.build/Debug/AUTest.build/build-state~.dat
-
-build/AUTest.build/Debug/AUTest.build/build-state.dat
-
-build/AUTest.build/Debug/AUTest.build/AUTest.dep
-
-build/AUTest.build/Debug/AUTest.build/AUTest~.dep
-
-build/AUTest.build/Debug/AUTest.build/Objects-normal/x86_64/main.d
-
-build/AUTest.build/Debug/AUTest.build/Objects-normal/x86_64/main.o
-
-AUTest.xcodeproj/project.xcworkspace/xcuserdata/tomschroeder.xcuserdatad/UserInterfaceState.xcuserstate
